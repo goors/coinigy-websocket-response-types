@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
-      - run: npm set //registry.npmjs.org/:_authToken ${{ secrets.NPM_USER }}
+      - run: npm set //registry.npmjs.org/:_authToken ${{ secrets.TOKEN }}
       - run: npm ci --no-audit
       - run: npm run lint --if-present
       - run: npm test
