@@ -1,6 +1,6 @@
 {
   "name": "coinigy-websocket-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Contains type definitions for Coinigy websocket api",
   "type": "module",
   "engines": {
