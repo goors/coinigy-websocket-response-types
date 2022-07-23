@@ -25,7 +25,7 @@
     "start": "node build/src/main.js",
     "clean": "rimraf coverage build tmp",
     "prebuild": "npm run lint",
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc",
     "build:watch": "tsc -w -p tsconfig.json",
     "build:release": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts --ext .mts",
@@ -40,5 +40,14 @@
   },
   "volta": {
     "node": "16.13.0"
-  }
+  },
+  "files": [
+    "lib/**/*.*"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "main": "lib/index.js",
+  "browser": "lib/index.js",
+  "types": "lib/index.d.ts"
 }
