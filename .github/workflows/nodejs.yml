@@ -9,9 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: volta-cli/action@v1
+      - run: npm install -g npm-cli-login
+      - run: npm-cli-login login -u ${{ secrets.NPM_USER }} -p ${{ secrets.NPM_SECRET }} -e nikola@pregmatch.org -r http://registry.npmjs.org
       - run: npm ci --no-audit
       - run: npm run lint --if-present
       - run: npm test
       - run: npm run build --if-present
         env:
           CI: true
+      - run: npm publish --registry=http://registry.npmjs.org
